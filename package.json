@@ -1,0 +1,23 @@
+{
+  "name": "qa-test-fixed",
+  "version": "1.0.0",
+  "description": "Please clone this project, carefully follow the provided instructions, and submit your code in a separate git repository that you create.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SelomieK/qa-test-fixed.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SelomieK/qa-test-fixed/issues"
+  },
+  "homepage": "https://github.com/SelomieK/qa-test-fixed#readme",
+  "devDependencies": {
+    "cypress": "^13.1.0",
+    "typescript": "^5.2.2"
+  }
+}
