@@ -1,0 +1,23 @@
+name: End-to-end tests
+on: push
+jobs:
+  cypress-run:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      # Install npm dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        post-steps:
+          - run:
+                name: Generate mochawesome html report
+                when: always
+                command: npx marge cypress/merged-report/merged-report.json -o cypress/mochawesome-html-report
+            - store_artifacts:
+                name: Uploading mochawesome-merged-report.json
+                path: cypress/merged-report
+            - store_artifacts:
+                name: Uploading mochawesome-html-report
+                path: cypress/mochawesome-html-report
